@@ -1,0 +1,42 @@
+<!doctype html>
+<head>
+    <title>FindIt Dictionary</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col1">
+            <P id="name">FindIt Dictionary</p>
+            <center><img id="logo" src="static/images/logo.jpg"></center>
+            <p id="desc">FindIt Dictionary will help you find the meaning, synonyms and antonyms of any word.</p>
+        </div>
+        <div class="col2">
+            <div class="row1">
+                <center><b><span style="font-size: 50px; margin: 300px;">FindIt Dictionary</span></b>
+                <br><span style="font-size: 20px;">Search your word below</span></center>
+                <center>
+                    <form action="search">
+                        <label for="word"></label>
+                        <input type="text" id="word" name="word" placeholder= "Enter your word">
+                        <button type="submit">Search</button>
+                    </form>
+                </center>
+            </div>
+            <div class="meaning">
+                <center><h1>{{word | title}}</h1>
+                <b>Meaning: </b>{{meaning}}
+   
+                <br><br><b>Synonyms: </b>{% for synonym in synonyms %}
+                    {{synonym}},
+                    {% endfor %}
+
+                <br><br><b>Antonyms: </b>{% for antonym in antonyms %}
+                    {{antonym}},
+                    {% endfor %}
+                </center>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-nav" style="color: white; ">Developed by Taibah</div>
+</body>
